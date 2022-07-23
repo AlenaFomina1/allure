@@ -35,24 +35,6 @@ public class DataGenerator {
         return phone;
     }
 
-
-    @UtilityClass
-    public static class Registration {
-
-        public static RegistrationInfo generateInfo(String locale) {
-            Faker faker = new Faker(new Locale(locale));
-            return new RegistrationInfo(faker.name().fullName(), faker.phoneNumber().phoneNumber(), faker.address().city());
-        }
-
-    }
-
-    public static String forwardDate(int plusDays) {
-        LocalDate today = LocalDate.now();
-        LocalDate newDate = today.plusDays(plusDays);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        return formatter.format(newDate);
-
-    }
 }
 
 
